@@ -1,0 +1,19 @@
+{
+  "id": "starter_module",
+  "name": "Starter Module",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.templates.starter_module.entry:StarterModule",
+  "description": "A minimal starter template. Copy this folder to create your own module.",
+  "category": "template",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read"
+  ],
+  "tags": ["template", "starter"],
+  "supports_state_restore": false,
+  "supports_export": false,
+  "data_contract_version": "1.0.0",
+  "default_settings": {}
+}

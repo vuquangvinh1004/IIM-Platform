@@ -1,0 +1,50 @@
+{
+  "id": "particle_swarm_optimization",
+  "name": "PSO — Tối ưu hóa Bầy đàn",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.logistics.particle_swarm_optimization.entry:ParticleSwarmOptimizationModule",
+  "description": "Mô phỏng thuật toán Particle Swarm Optimization (PSO). Hỗ trợ hàm Sphere và Ackley, topology Star/Ring, xử lý biên Clip/Reflect, trực quan hóa bầy đàn 2D và đồ thị hội tụ.",
+  "category": "logistics",
+  "subcategory": "routing",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": [
+    "pso",
+    "particle-swarm",
+    "optimization",
+    "metaheuristic",
+    "sphere",
+    "ackley",
+    "convergence",
+    "simulation",
+    "quantitative"
+  ],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "icon": "assets/icon.png",
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "n_particles": 30,
+    "n_iterations": 100
+  },
+  "capabilities": [
+    "plot.2d",
+    "compute.optimization",
+    "export.image",
+    "parameter.arbitrary",
+    "simulation.animated"
+  ],
+  "ui": {
+    "min_width": 1000,
+    "min_height": 620,
+    "layout_mode": "split"
+  }
+}

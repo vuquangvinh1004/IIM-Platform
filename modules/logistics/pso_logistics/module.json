@@ -1,0 +1,31 @@
+{
+  "id": "pso_logistics",
+  "name": "PSO \u2014 T\u1ed1i \u01b0u h\u00f3a Giao h\u00e0ng",
+  "version": "1.2.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.logistics.pso_logistics.entry:PSOLogisticsModule",
+  "category": "logistics",
+  "subcategory": "routing",
+  "description": "Mô phỏng PSO rời rạc cho bài toán giao hàng: TSP (1 xe), CVRP (nhiều xe, ràng buộc tải trọng) và VRPTW (cửa sổ thời gian mềm).",
+  "tags": ["pso", "optimization", "tsp", "vrp", "cvrp", "routing", "logistics", "discrete", "simulation"],
+  "author": "IIMP Team",
+  "supports_state_restore": true,
+  "supports_export": true,
+  "ui": {
+    "min_width": 1100,
+    "min_height": 680,
+    "layout_mode": "split"
+  },
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "dependencies": {
+    "python": ">=3.11",
+    "packages": ["PySide6", "matplotlib", "numpy"]
+  }
+}

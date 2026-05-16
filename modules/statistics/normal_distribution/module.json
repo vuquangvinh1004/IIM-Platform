@@ -1,0 +1,38 @@
+{
+  "id": "normal_distribution",
+  "name": "Khám phá Phân phối Chuẩn",
+  "version": "3.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.normal_distribution.entry:NormalDistributionModule",
+  "description": "Mô phỏng phân phối chuẩn N(μ,σ) với 3 chế độ: (1) hiển thị phân phối với quy tắc 68-95-99,7%, (2) tìm Z/X khi cho α, (3) tìm α khi cho Z hoặc X.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": ["statistics", "normal distribution", "z score", "probability", "simulation", "alpha", "critical value"],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "icon": "assets/icon.png",
+  "data_contract_version": "3.0.0",
+  "default_settings": {
+    "precision": 4,
+    "theme_variant": "default"
+  },
+  "capabilities": [
+    "plot.2d",
+    "compute.statistics",
+    "export.image",
+    "parameter.arbitrary"
+  ],
+  "ui": {
+    "min_width": 900,
+    "min_height": 580,
+    "layout_mode": "split"
+  }
+}

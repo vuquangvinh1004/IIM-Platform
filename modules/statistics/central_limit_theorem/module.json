@@ -1,0 +1,38 @@
+{
+  "id": "central_limit_theorem",
+  "name": "Định lý Giới hạn Trung tâm",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.central_limit_theorem.entry:CentralLimitTheoremModule",
+  "description": "Mô phỏng Định lý Giới hạn Trung tâm (Central Limit Theorem) qua bối cảnh cân trọng lượng sản phẩm. Thu thập dữ liệu bằng cân thủ công (drag-drop) hoặc cân tự động, tính trung bình và độ lệch chuẩn mỗi mẫu, rồi biểu diễn phân phối trung bình mẫu so với phân phối Student và phân phối chuẩn.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "settings.read",
+    "settings.write",
+    "dialogs.basic",
+    "activity.write"
+  ],
+  "tags": [
+    "central-limit-theorem",
+    "clt",
+    "statistics",
+    "sampling",
+    "normal-distribution",
+    "student-t",
+    "simulation",
+    "weighing",
+    "mean"
+  ],
+  "supports_state_restore": true,
+  "supports_export": false,
+  "ui": {
+    "min_width": 960,
+    "min_height": 680
+  },
+  "data_contract_version": "1.0.0",
+  "default_settings": {}
+}

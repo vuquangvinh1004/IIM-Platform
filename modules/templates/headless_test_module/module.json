@@ -1,0 +1,17 @@
+{
+  "id": "headless_test_module",
+  "name": "Headless Test Module",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.templates.headless_test_module.entry:HeadlessTestModule",
+  "description": "Minimal module for loader integration tests — no PySide6 dependency.",
+  "category": "template",
+  "author": "IIMP Team",
+  "permissions": [],
+  "tags": ["test", "headless"],
+  "supports_state_restore": false,
+  "supports_export": false,
+  "data_contract_version": "1.0.0",
+  "default_settings": {}
+}

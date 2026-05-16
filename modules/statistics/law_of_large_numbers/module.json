@@ -1,0 +1,20 @@
+{
+  "id": "law_of_large_numbers",
+  "name": "Luật Số Lớn — Tung Đồng Xu",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.law_of_large_numbers.entry:LawOfLargeNumbersModule",
+  "description": "Mô phỏng luật số lớn qua thí nghiệm tung đồng xu. Quan sát tần số tương đối hội tụ về xác suất lý thuyết 0.5 khi số lần thử tăng.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": ["storage.read", "storage.write", "export.file", "settings.read", "settings.write"],
+  "tags": ["probability", "simulation", "law-of-large-numbers", "coin-flip"],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "tosses_per_click": 1,
+    "precision": 4
+  }
+}

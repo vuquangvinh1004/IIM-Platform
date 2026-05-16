@@ -1,0 +1,47 @@
+{
+  "id": "demand_forecasting_scm",
+  "name": "Dự báo nhu cầu chuỗi cung ứng",
+  "version": "0.1.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.economics.demand_forecasting_scm.entry:DemandForecastingModule",
+  "description": "Mô phỏng và so sánh các phương pháp dự báo nhu cầu Phase 1: Naive, Moving Average, SES, Linear Regression, Holt's Model. Bao gồm Smart Suggestion, outlier detection, tracking signal và control chart.",
+  "category": "economics",
+  "author": "IIMP Team",
+  "permissions": [
+    "settings.read",
+    "settings.write",
+    "export.file",
+    "storage.read",
+    "storage.write"
+  ],
+  "tags": [
+    "forecasting",
+    "supply-chain",
+    "demand",
+    "time-series",
+    "exponential-smoothing",
+    "statistics"
+  ],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "icon": "assets/icon.png",
+  "license": "Proprietary",
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "benchmark": "naive",
+    "ts_threshold": 4.0
+  },
+  "capabilities": [
+    "chart_export",
+    "state_persistence",
+    "csv_import"
+  ],
+  "optional_dependencies": [],
+  "ui": {
+    "min_width": 900,
+    "min_height": 600,
+    "layout_mode": "default"
+  },
+  "compatibility_notes": "Phase 1 only. Phase 2 (seasonal, cyclic, advanced) planned for future release."
+}

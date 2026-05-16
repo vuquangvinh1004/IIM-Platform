@@ -1,0 +1,32 @@
+{
+  "id": "pso_logistics_map",
+  "name": "PSO — Giao hàng trên Bản đồ Thật",
+  "version": "1.1.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.logistics.pso_logistics_map.entry:PSOLogisticsMapModule",
+  "category": "logistics",
+  "subcategory": "routing",
+  "description": "Mô phỏng PSO rời rạc cho TSP/VRP/VRPTW trên mạng đường thật từ file OSM .pbf (offline).",
+  "tags": ["pso", "logistics", "routing", "tsp", "vrp", "osm", "map", "discrete"],
+  "author": "IIMP Team",
+  "supports_state_restore": true,
+  "supports_export": true,
+  "data_contract_version": "1.1.0",
+  "ui": {
+    "min_width": 1200,
+    "min_height": 720,
+    "layout_mode": "split"
+  },
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "dependencies": {
+    "python": ">=3.11",
+    "packages": ["PySide6", "matplotlib", "numpy", "scipy", "networkx", "osmium"]
+  }
+}

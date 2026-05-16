@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node
+node_modules/
+
+# Environment
+.env
+*.env.local
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# Data & runtime
+data/database/*.db
+data/cache/manifest_cache.json
+data/logs/
+data/temp/
+data/exports/
+data/module_data/
+
+# Large local datasets and generated map artifacts
+*.osm.pbf
+modules/logistics/pso_logistics_map/cache/
+modules/logistics/pso_logistics_map/scripts/debug_map.png
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db

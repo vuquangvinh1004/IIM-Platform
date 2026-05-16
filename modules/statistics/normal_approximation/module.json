@@ -1,0 +1,43 @@
+{
+  "id": "normal_approximation",
+  "name": "Xấp xỉ Chuẩn của Phân phối Rời rạc",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.normal_approximation.entry:NormalApproximationModule",
+  "description": "Mô phỏng xấp xỉ chuẩn của phân phối nhị thức B(n,p) và phân phối Poisson P(μ). Hai đồ thị cột song song so sánh phân phối rời rạc với đường cong chuẩn tương ứng, kèm kiểm tra điều kiện xấp xỉ.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": [
+    "statistics",
+    "normal approximation",
+    "binomial distribution",
+    "poisson distribution",
+    "probability",
+    "simulation",
+    "central limit theorem"
+  ],
+  "supports_state_restore": true,
+  "supports_export": false,
+  "icon": null,
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "precision": 4
+  },
+  "capabilities": [
+    "plot.2d",
+    "compute.statistics"
+  ],
+  "ui": {
+    "min_width": 980,
+    "min_height": 580,
+    "layout_mode": "split"
+  },
+  "optional_dependencies": []
+}

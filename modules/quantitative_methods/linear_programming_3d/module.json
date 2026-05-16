@@ -1,0 +1,35 @@
+{
+  "id": "linear_programming_3d",
+  "name": "Quy hoạch Tuyến tính 3D",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.quantitative_methods.linear_programming_3d.entry:LinearProgramming3DModule",
+  "description": "Giải và minh họa bài toán quy hoạch tuyến tính 3 biến bằng đồ thị không gian. Vẽ polyhedron miền nghiệm, xác định các đỉnh, tính giá trị tối ưu và trực quan hóa mặt phẳng đồng mức di chuyển.",
+  "category": "quantitative_methods",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": [
+    "linear-programming",
+    "optimization",
+    "quy-hoach-tuyen-tinh",
+    "feasible-region",
+    "3d",
+    "polyhedron",
+    "constraints",
+    "objective-function",
+    "graphical-method"
+  ],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "data_contract_version": "1.0.0",
+  "optional_dependencies": [
+    "scipy"
+  ]
+}

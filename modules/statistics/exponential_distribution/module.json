@@ -1,0 +1,47 @@
+{
+  "id": "exponential_distribution",
+  "name": "Khám phá Phân phối Mũ",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.exponential_distribution.entry:ExponentialDistributionModule",
+  "description": "Mô phỏng phân phối mũ Exp(μ) với 2 chế độ: (1) vẽ đồ thị PDF với tham số trung bình μ kèm thống kê đặc trưng, (2) tính xác suất P(X≤x), P(X>x) hoặc P(a≤X≤b) từ giá trị x cho trước và tô màu diện tích dưới đường cong.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": [
+    "statistics",
+    "exponential distribution",
+    "probability",
+    "simulation",
+    "lambda",
+    "rate",
+    "memoryless",
+    "poisson process"
+  ],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "icon": "assets/icon.png",
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "precision": 4,
+    "theme_variant": "default"
+  },
+  "capabilities": [
+    "plot.2d",
+    "compute.statistics",
+    "export.image",
+    "parameter.arbitrary"
+  ],
+  "ui": {
+    "min_width": 860,
+    "min_height": 540,
+    "layout_mode": "split"
+  }
+}

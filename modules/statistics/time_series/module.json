@@ -1,0 +1,45 @@
+{
+  "id": "time_series_simulation",
+  "name": "Mô phỏng Chuỗi số Thời gian",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.time_series.entry:TimeSeriesModule",
+  "description": "Mô phỏng chuỗi số thời gian và các thành phần: Xu hướng (T), Mùa vụ (S), Chu kỳ (C) và mô hình tổng hợp cộng tính / nhân tính. Phục vụ giảng dạy phân tích chuỗi thời gian.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": [
+    "time series",
+    "trend",
+    "seasonality",
+    "cyclical",
+    "additive model",
+    "multiplicative model",
+    "simulation",
+    "forecasting"
+  ],
+  "supports_state_restore": true,
+  "supports_export": false,
+  "icon": "assets/icon.png",
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "theme_variant": "default"
+  },
+  "capabilities": [
+    "plot.2d",
+    "compute.statistics",
+    "interactive.controls"
+  ],
+  "ui": {
+    "min_width": 960,
+    "min_height": 600,
+    "layout_mode": "split"
+  }
+}

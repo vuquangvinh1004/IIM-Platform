@@ -1,0 +1,40 @@
+{
+  "id": "interactive_geometry",
+  "name": "Khám phá Hình học Tương tác",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.visualization.interactive_geometry.entry:InteractiveGeometryModule",
+  "description": "Khám phá hình học 3D tương tác: bề mặt sin 2D, paraboloid, yên ngựa (saddle), hình cầu, hình xuyến (torus). Hỗ trợ xoay góc nhìn, chọn color map, xuất ảnh PNG.",
+  "category": "visualization",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": ["geometry", "3d", "surface", "visualization", "interactive", "matplotlib"],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "icon": "assets/icon.png",
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "default_shape": "sine_2d",
+    "default_colormap": "viridis",
+    "default_elevation": 30,
+    "default_azimuth": -60
+  },
+  "capabilities": [
+    "plot.3d",
+    "geometry.interactive",
+    "export.image",
+    "parameter.arbitrary"
+  ],
+  "ui": {
+    "min_width": 960,
+    "min_height": 620,
+    "layout_mode": "split"
+  }
+}

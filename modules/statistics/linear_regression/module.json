@@ -1,0 +1,48 @@
+{
+  "id": "linear_regression",
+  "name": "Phân tích Hồi quy Tuyến tính Đơn",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.linear_regression.entry:LinearRegressionModule",
+  "description": "Mô phỏng phân tích hồi quy tuyến tính đơn giản. Nhập dữ liệu quan sát (X, Y), hiển thị biểu đồ phân tán, thêm đường xu hướng tương tác (tịnh tiến, xoay), tính sai số e_i và tổng bình phương sai số Σe_i², và giải hệ số hồi quy OLS.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write",
+    "dialogs.basic"
+  ],
+  "tags": [
+    "statistics",
+    "linear regression",
+    "OLS",
+    "least squares",
+    "trend line",
+    "scatter plot",
+    "residuals",
+    "regression analysis"
+  ],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "icon": "assets/icon.png",
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "precision": 4,
+    "theme_variant": "default"
+  },
+  "capabilities": [
+    "plot.2d",
+    "compute.statistics",
+    "export.image",
+    "interactive.drag"
+  ],
+  "ui": {
+    "min_width": 960,
+    "min_height": 700,
+    "layout_mode": "split"
+  }
+}

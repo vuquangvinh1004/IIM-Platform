@@ -1,0 +1,20 @@
+{
+  "id": "law_of_large_numbers_dice",
+  "name": "Luật Số Lớn — Tung Xúc Xắc",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.law_of_large_numbers_dice.entry:LLNDiceModule",
+  "description": "Mô phỏng luật số lớn qua thí nghiệm tung xúc xắc. Người dùng chọn một hoặc nhiều mặt cần quan sát; tần số tương đối hội tụ về xác suất lý thuyết tương ứng khi số lần thử tăng.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": ["storage.read", "storage.write", "export.file", "settings.read", "settings.write"],
+  "tags": ["probability", "simulation", "law-of-large-numbers", "dice"],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "rolls_per_click": 1,
+    "observed_faces": [1]
+  }
+}

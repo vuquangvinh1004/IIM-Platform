@@ -1,0 +1,46 @@
+{
+  "id": "linear_programming_2d",
+  "name": "Quy hoạch Tuyến tính 2D",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.quantitative_methods.linear_programming_2d.entry:LinearProgramming2DModule",
+  "description": "Giải và minh họa bài toán quy hoạch tuyến tính 2 biến bằng đồ thị. Vẽ miền nghiệm, xác định các đỉnh, tính giá trị tối ưu và trực quan hóa đường đồng mức di chuyển.",
+  "category": "quantitative_methods",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write"
+  ],
+  "tags": [
+    "linear-programming",
+    "optimization",
+    "quy-hoach-tuyen-tinh",
+    "feasible-region",
+    "simplex",
+    "graphical-method",
+    "2d",
+    "constraints",
+    "objective-function"
+  ],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "ui": {
+    "min_width": 1000,
+    "min_height": 650,
+    "layout_mode": "split"
+  },
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "precision": 4
+  },
+  "capabilities": [
+    "plot.2d",
+    "compute.optimization",
+    "export.image",
+    "interactive.slider"
+  ]
+}

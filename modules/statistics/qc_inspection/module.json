@@ -1,0 +1,38 @@
+{
+  "id": "qc_inspection",
+  "name": "QC Kiểm tra Chất lượng",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.qc_inspection.entry:QCInspectionModule",
+  "description": "Mô phỏng quy trình kiểm tra chất lượng sản phẩm (QC) trên băng chuyền. Phân loại thành phẩm/phế phẩm, ghi nhận qua nhiều lần kiểm tra, rồi phân tích thống kê: bảng tần số, biểu đồ cột và đối chiếu phân phối nhị thức & Poisson.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "settings.read",
+    "settings.write",
+    "dialogs.basic",
+    "activity.write"
+  ],
+  "tags": [
+    "quality-control",
+    "qc",
+    "statistics",
+    "binomial",
+    "poisson",
+    "simulation",
+    "manufacturing",
+    "inspection",
+    "frequency"
+  ],
+  "supports_state_restore": true,
+  "supports_export": false,
+  "ui": {
+    "min_width": 900,
+    "min_height": 650
+  },
+  "data_contract_version": "1.0.0",
+  "default_settings": {}
+}
