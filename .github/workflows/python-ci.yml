@@ -7,13 +7,13 @@ on:
   pull_request:
 
 jobs:
-  test:
+  core-and-shell:
     runs-on: windows-latest
 
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.13"]
+        python-version: ["3.11", "3.13"]
 
     steps:
       - name: Checkout repository
@@ -38,10 +38,29 @@ jobs:
         run: |
           python -m pytest tests/unit tests/integration tests/ui/test_smoke_shell.py
 
+  module-slice:
+    runs-on: windows-latest
+    needs: core-and-shell
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-dev.txt
+
       - name: Run representative module tests
         run: |
-          python -m pytest \
-            modules/statistics/normal_distribution/tests/test_smoke_ui.py \
-            modules/statistics/exponential_distribution/tests/test_smoke_ui.py \
-            modules/statistics/time_series/tests/test_manifest.py \
-            modules/economics/supply_demand/tests/test_manifest_and_logic.py
+          python -m pytest modules/statistics/normal_distribution/tests/test_smoke_ui.py modules/statistics/exponential_distribution/tests/test_smoke_ui.py modules/statistics/time_series/tests/test_manifest.py modules/economics/supply_demand/tests/test_manifest_and_logic.py

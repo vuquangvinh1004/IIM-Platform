@@ -1,5 +1,9 @@
 # Integrated Interactive Module Platform
 
+[![Python CI](https://github.com/vuquangvinh1004/IIM-Platform/actions/workflows/python-ci.yml/badge.svg)](https://github.com/vuquangvinh1004/IIM-Platform/actions/workflows/python-ci.yml)
+[![Design Lint](https://github.com/vuquangvinh1004/IIM-Platform/actions/workflows/design-lint.yml/badge.svg)](https://github.com/vuquangvinh1004/IIM-Platform/actions/workflows/design-lint.yml)
+[![Windows Package Smoke](https://github.com/vuquangvinh1004/IIM-Platform/actions/workflows/windows-package-smoke.yml/badge.svg)](https://github.com/vuquangvinh1004/IIM-Platform/actions/workflows/windows-package-smoke.yml)
+
 Desktop platform for interactive modular applications. Built with Python and PySide6.
 
 ## Requirements
