@@ -35,8 +35,9 @@ jobs:
           python -m pip install -r requirements-dev.txt
 
       - name: Run core and shell tests
+        working-directory: ${{ github.workspace }}
         run: |
-          python -m pytest tests/unit tests/integration tests/ui/test_smoke_shell.py
+          python -m pytest --rootdir=. tests/unit tests/integration tests/ui/test_smoke_shell.py
 
   module-slice:
     runs-on: windows-latest
@@ -62,5 +63,6 @@ jobs:
           python -m pip install -r requirements-dev.txt
 
       - name: Run representative module tests
+        working-directory: ${{ github.workspace }}
         run: |
-          python -m pytest modules/statistics/normal_distribution/tests/test_smoke_ui.py modules/statistics/exponential_distribution/tests/test_smoke_ui.py modules/statistics/time_series/tests/test_manifest.py modules/economics/supply_demand/tests/test_manifest_and_logic.py
+          python -m pytest --rootdir=. modules/statistics/normal_distribution/tests/test_smoke_ui.py modules/statistics/exponential_distribution/tests/test_smoke_ui.py modules/statistics/time_series/tests/test_manifest.py modules/economics/supply_demand/tests/test_manifest_and_logic.py
