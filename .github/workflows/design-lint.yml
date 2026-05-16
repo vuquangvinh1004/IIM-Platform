@@ -1,0 +1,35 @@
+name: Design Lint
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - DESIGN.md
+      - ui/styles/**
+      - .github/workflows/design-lint.yml
+  pull_request:
+    paths:
+      - DESIGN.md
+      - ui/styles/**
+      - .github/workflows/design-lint.yml
+  workflow_dispatch:
+
+jobs:
+  lint-design-system:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install design.md CLI
+        run: npm install --no-save @google/design.md
+
+      - name: Lint DESIGN.md
+        run: node ./node_modules/@google/design.md/dist/index.js lint DESIGN.md

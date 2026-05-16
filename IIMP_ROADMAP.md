@@ -624,6 +624,15 @@ ADDED | GitHub Copilot (Claude Sonnet 4.6) | DESIGN_PHILOSOPHY_INTEGRATION | Tí
   - §9.5.3: Quy tắc "Design It Twice" cho quyết định architectural quan trọng
 - Các nguyên tắc này đồng bộ với §2.3 trong IIMP_ARCHITECTURE.md và §2.3 trong IIMP_MODULE_SDK.md
 
+### 2026-05-16
+
+COMPLETED | GitHub Copilot (GPT-5.4) | GitHub repository publication.
+
+- Khởi tạo Git repository cục bộ và nối với remote `vuquangvinh1004/IIM-Platform`
+- Publish toàn bộ source hiện tại lên `origin/main`
+- Chuẩn hóa `.gitignore` để loại `node_modules/`, cache runtime và dữ liệu bản đồ cỡ lớn khỏi lịch sử push
+- Loại file `modules/logistics/pso_logistics_map/vietnam-260413.osm.pbf` khỏi lịch sử publish để đáp ứng giới hạn 100 MB của GitHub
+
 ---
 
 END OF ROADMAP DOCUMENT
