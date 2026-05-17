@@ -527,10 +527,11 @@ class _FreqTableWidget(_WidgetBase):  # type: ignore[misc]
             "QHeaderView::section { background-color: #2C3E50; color: #FFF;"
             " padding: 8px; font-weight: bold; font-size: 15px; }"
         )
-        self._table.setMaximumWidth(300)
+        self._table.setMinimumWidth(360)
+        self._table.setMaximumWidth(440)
         hdr = self._table.horizontalHeader()
-        hdr.setStretchLastSection(True)
-        for col in range(2):
+        hdr.setStretchLastSection(False)
+        for col in range(3):
             hdr.setSectionResizeMode(col, QHeaderView.ResizeMode.ResizeToContents)
         layout.addWidget(self._table)
 
