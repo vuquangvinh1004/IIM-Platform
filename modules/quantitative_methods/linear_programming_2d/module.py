@@ -577,7 +577,8 @@ class _ConstraintRow(_WidgetBase):  # type: ignore[misc]
         if constraint:
             idx_op = ["≤", "≥", "="].index(constraint.op) if constraint.op in ["≤", "≥", "="] else 0
             self._combo_op.setCurrentIndex(idx_op)
-        self._combo_op.setFixedWidth(50)
+        self._combo_op.setFixedWidth(58)
+        self._combo_op.setMaxVisibleItems(3)
         lay.addWidget(self._combo_op)
 
         self._spin_rhs = self._make_spin(constraint.rhs if constraint else 1.0)
@@ -720,7 +721,8 @@ class _LP2DView(_WidgetBase):  # type: ignore[misc]
         self._combo_sense = QComboBox()
         self._combo_sense.addItems(["max", "min"])
         self._combo_sense.setCurrentText(engine.problem.sense)
-        self._combo_sense.setFixedWidth(60)
+        self._combo_sense.setFixedWidth(88)
+        self._combo_sense.setMaxVisibleItems(2)
         obj_lay.addWidget(self._combo_sense, 0, 5)
 
         left.addWidget(obj_group)

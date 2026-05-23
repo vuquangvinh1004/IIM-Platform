@@ -669,7 +669,7 @@ class ExponentialDistributionModule(BaseModule):
         header_row = QHBoxLayout()
         header_row.addWidget(QLabel("Overlay hiện tại:"))
         btn_clear = QPushButton("Xóa tất cả")
-        btn_clear.setFixedHeight(22)
+        btn_clear.setMinimumHeight(28)
         btn_clear.setProperty("role", "subtle")
         btn_clear.clicked.connect(self._on_clear_dists_clicked)
         header_row.addStretch()

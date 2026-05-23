@@ -75,6 +75,11 @@ class ConfigDialog(QDialog):
         self._benchmark_combo = QComboBox()
         for label, _ in _BENCHMARK_CHOICES:
             self._benchmark_combo.addItem(label)
+        self._benchmark_combo.setMaxVisibleItems(3)
+        self._benchmark_combo.setMinimumContentsLength(24)
+        self._benchmark_combo.setSizeAdjustPolicy(
+            QComboBox.SizeAdjustPolicy.AdjustToMinimumContentsLengthWithIcon
+        )
         form.addRow("Benchmark mặc định:", self._benchmark_combo)
 
         # Tracking Signal threshold

@@ -36,3 +36,24 @@ class ActivityService:
                 )
             )
         _log.debug(f"Activity logged: {type_value} | {message}")
+
+    def log_activity(
+        self,
+        module_id: str,
+        action: str,
+        *,
+        metadata: dict | None = None,
+    ) -> None:
+        """Backward-compatible alias for older modules expecting ``log_activity``.
+
+        Args:
+            module_id: Stable module identifier producing the event.
+            action: Short action verb or status label (for example: activated).
+            metadata: Optional structured details stored with the event.
+        """
+        self.log(
+            activity_type="MODULE_ACTIVITY",
+            message=action,
+            module_id=module_id,
+            metadata=metadata,
+        )

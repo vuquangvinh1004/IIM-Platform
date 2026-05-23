@@ -55,7 +55,7 @@ class ModuleHostFrame(QFrame):
         *,
         is_error: bool = False,
     ) -> QWidget:
-        return EmptyState(
+        panel = EmptyState(
             kicker=kicker,
             title=title,
             message=message,
@@ -64,6 +64,8 @@ class ModuleHostFrame(QFrame):
             on_action=self.browse_requested.emit,
             state="error" if is_error else "empty",
         )
+        panel.setProperty("hostOwned", True)
+        return panel
 
     def show_module(self, module_id: str, widget: QWidget) -> None:
         """Replace the current content with *widget* for *module_id*."""
@@ -97,10 +99,16 @@ class ModuleHostFrame(QFrame):
 
     def _clear(self) -> None:
         if self._current_widget is not None:
-            self._layout.removeWidget(self._current_widget)
-            self._current_widget.hide()
-            if self._current_widget is not self._placeholder:
-                self._current_widget.deleteLater()
+            widget = self._current_widget
+            self._layout.removeWidget(widget)
+            widget.hide()
+            if widget is self._placeholder:
+                pass
+            elif bool(widget.property("hostOwned")):
+                widget.deleteLater()
+            else:
+                # Keep module-owned views alive for modules that cache and reuse their root widget.
+                widget.setParent(None)
             self._current_widget = None
 
     @property

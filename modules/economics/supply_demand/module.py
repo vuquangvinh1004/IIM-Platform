@@ -957,6 +957,9 @@ class _WelfareDialog(QDialog):
             "Áp giá trần — Price Ceiling  (P < P*)",
             "Áp giá sàn  — Price Floor    (P > P*)",
         ])
+        self._mode_combo.setMaxVisibleItems(3)
+        self._mode_combo.setMinimumContentsLength(34)
+        self._mode_combo.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToMinimumContentsLengthWithIcon)
         self._mode_combo.setStyleSheet("font-size: 12px; padding: 4px;")
         mode_row.addWidget(self._mode_combo)
         mode_row.addStretch()

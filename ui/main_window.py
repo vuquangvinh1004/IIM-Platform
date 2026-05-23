@@ -87,6 +87,7 @@ class MainWindow(QMainWindow):
         self._settings_service = settings_service
         self._folder_service = folder_service
         self._nav_buttons: list[QPushButton] = []
+        self._library_signal_connected = False
 
         self._setup_window()
         self._build_ui()
@@ -152,6 +153,9 @@ class MainWindow(QMainWindow):
 
         library = cast(ModuleLibraryView, self._stack.widget(_NavIndex.LIBRARY))
         library.set_folder_service(self._folder_service)
+        if not self._library_signal_connected:
+            library.open_module.connect(self._open_module)
+            self._library_signal_connected = True
 
         workspace = cast(WorkspaceView, self._stack.widget(_NavIndex.WORKSPACE))
         workspace.host_frame.browse_requested.connect(lambda: self._navigate(_NavIndex.LIBRARY))
@@ -185,8 +189,14 @@ class MainWindow(QMainWindow):
             _log.error(f"Module '{module_id}' failed to load.")
             return
 
-        widget = instance.build_view()
-        workspace.host_frame.show_module(module_id, widget)
+        try:
+            widget = instance.build_view()
+            workspace.host_frame.show_module(module_id, widget)
+        except Exception as exc:
+            workspace.host_frame.show_error(module_id, f"Build view failed: {exc}")
+            self._navigate(_NavIndex.WORKSPACE)
+            _log.exception(f"Module '{module_id}' failed while building/hosting view: {exc}")
+            return
 
         if not self._module_service.activate(module_id):
             record = self._registry.get_record(module_id)
@@ -206,5 +216,4 @@ class MainWindow(QMainWindow):
         records = self._registry.all_records()
         library = cast(ModuleLibraryView, self._stack.widget(_NavIndex.LIBRARY))
         library.populate(records)
-        library.open_module.connect(self._open_module)
         self._status_strip.set_module_count(len(records))

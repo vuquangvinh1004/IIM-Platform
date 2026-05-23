@@ -220,7 +220,7 @@ def _build_metrics_widget() -> "QWidget":
 
     footer = QLabel(
         "<i>Nên kết hợp nhiều tiêu chí: MAE/RMSE đánh giá "
-        "độ lọn sai số; Cum. Bias phát hiện thiên lệch hệ "
+        "độ lớn sai số; Cum. Bias phát hiện thiên lệch hệ "
         "thống; FVA so sánh hiệu quả so với mức chuẩn.</i>"
     )
     footer.setWordWrap(True)

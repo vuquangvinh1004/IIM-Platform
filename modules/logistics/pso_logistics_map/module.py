@@ -1116,12 +1116,16 @@ class _MapView(_WidgetBase):  # type: ignore[valid-type]
         self._combo_bbox = QComboBox()
         for name in KNOWN_BBOXES:
             self._combo_bbox.addItem(name, name)
+        self._combo_bbox.setMaxVisibleItems(10)
+        self._combo_bbox.setMinimumContentsLength(18)
+        self._combo_bbox.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToMinimumContentsLengthWithIcon)
         gm.addLayout(_lrow("Khu vực:", self._combo_bbox))
 
         self._combo_net_type = QComboBox()
         self._combo_net_type.addItem("Lái xe (driving)", "driving")
         self._combo_net_type.addItem("Đi bộ (walking)", "walking")
         self._combo_net_type.addItem("Xe đạp (cycling)", "cycling")
+        self._combo_net_type.setMaxVisibleItems(3)
         gm.addLayout(_lrow("Loại đường:", self._combo_net_type))
 
         self._btn_load_graph = QPushButton("↺  Tải lại đồ thị")
@@ -1141,6 +1145,9 @@ class _MapView(_WidgetBase):  # type: ignore[valid-type]
         self._combo_problem_type.addItem("TSP — 1 xe, không ràng buộc", "tsp")
         self._combo_problem_type.addItem("VRP — Nhiều xe, tải trọng", "vrp")
         self._combo_problem_type.addItem("VRPTW — VRP + Cửa sổ thời gian", "vrptw")
+        self._combo_problem_type.setMaxVisibleItems(3)
+        self._combo_problem_type.setMinimumContentsLength(18)
+        self._combo_problem_type.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToMinimumContentsLengthWithIcon)
         gp.addLayout(_lrow("Loại bài toán:", self._combo_problem_type, lbl_w=110))
 
         self._spin_n_cust = QSpinBox()
@@ -1155,6 +1162,9 @@ class _MapView(_WidgetBase):  # type: ignore[valid-type]
         self._combo_input_mode = QComboBox()
         self._combo_input_mode.addItem("🎲 Ngẫu nhiên (Seed)", "seed")
         self._combo_input_mode.addItem("📍 Thủ công (Click bản đồ)", "manual")
+        self._combo_input_mode.setMaxVisibleItems(2)
+        self._combo_input_mode.setMinimumContentsLength(18)
+        self._combo_input_mode.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToMinimumContentsLengthWithIcon)
         gp.addLayout(_lrow("Chế độ nhập:", self._combo_input_mode, lbl_w=110))
 
         # ── Seed row (hidden in manual mode) ──────────────────────────────────
@@ -1338,6 +1348,7 @@ class _MapView(_WidgetBase):  # type: ignore[valid-type]
         self._combo_topo = QComboBox()
         self._combo_topo.addItem("Star (toàn cục)", "star")
         self._combo_topo.addItem("Ring (láng giềng)", "ring")
+        self._combo_topo.setMaxVisibleItems(2)
         g2.addLayout(_lrow("Topology:", self._combo_topo))
 
         self._spin_pso_seed = QSpinBox()

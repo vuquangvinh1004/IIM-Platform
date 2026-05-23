@@ -17,6 +17,10 @@ QWidget {{
     background-color: {COLORS['background']};
 }}
 
+QLabel {{
+    background-color: transparent;
+}}
+
 QMainWindow {{
     background-color: {COLORS['background']};
 }}
@@ -68,10 +72,11 @@ QPushButton {{
     color: {COLORS['on_tertiary']};
     border: none;
     border-radius: {RADII['md']}px;
+    min-height: 28px;
     padding: 8px 14px;
-    font-family: {FONTS['label']};
+    font-family: "Segoe UI";
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
 }}
 
 QPushButton:hover {{
@@ -117,9 +122,83 @@ QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox {{
     background-color: {COLORS['surface']};
     border: 1px solid {COLORS['outline_variant']};
     border-radius: {RADII['md']}px;
+    min-height: 24px;
     padding: 8px 10px;
     selection-background-color: {COLORS['primary_container']};
     selection-color: {COLORS['on_primary']};
+}}
+
+QSpinBox, QDoubleSpinBox {{
+    padding-right: 8px;
+}}
+
+QSpinBox::up-button,
+QSpinBox::down-button,
+QDoubleSpinBox::up-button,
+QDoubleSpinBox::down-button {{
+    width: 0px;
+    height: 0px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    image: none;
+}}
+
+QComboBox {{
+    padding-right: 26px;
+}}
+
+QComboBox::drop-down {{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid {COLORS['outline_variant']};
+    border-top-right-radius: {RADII['md']}px;
+    border-bottom-right-radius: {RADII['md']}px;
+    background-color: {COLORS['surface_container_low']};
+}}
+
+QComboBox::down-arrow {{
+    image: none;
+    width: 0px;
+    height: 0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid {COLORS['on_surface']};
+}}
+
+QComboBox QAbstractItemView {{
+    background-color: {COLORS['surface']};
+    color: {COLORS['on_surface']};
+    border: 1px solid {COLORS['outline_variant']};
+    outline: none;
+    selection-background-color: {COLORS['secondary_container']};
+    selection-color: {COLORS['on_secondary_container']};
+    padding: 4px;
+}}
+
+QTableWidget,
+QTableView {{
+    background-color: {COLORS['surface']};
+    alternate-background-color: {COLORS['surface_container_low']};
+    gridline-color: {COLORS['outline_variant']};
+}}
+
+QTableWidget QLineEdit,
+QTableView QLineEdit,
+QTableWidget QSpinBox,
+QTableView QSpinBox,
+QTableWidget QDoubleSpinBox,
+QTableView QDoubleSpinBox,
+QTableWidget QComboBox {{
+    min-height: 20px;
+    padding: 2px 6px;
+}}
+
+QTableWidget QPushButton,
+QTableView QPushButton {{
+    min-height: 20px;
+    padding: 2px 8px;
 }}
 
 QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus {{
