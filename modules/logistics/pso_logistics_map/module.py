@@ -79,6 +79,12 @@ from modules.logistics.pso_logistics_map.workers.simulation_worker import (
 )
 from modules.logistics.pso_logistics_map.core.pbf_loader import KNOWN_BBOXES, BBox
 
+try:
+    from shiboken6 import isValid as _qt_is_valid
+except ImportError:  # pragma: no cover
+    def _qt_is_valid(_obj: object) -> bool:
+        return True
+
 # ── Paths ─────────────────────────────────────────────────────────────────────
 _MODULE_DIR = Path(__file__).parent
 _PBF_FILE = _MODULE_DIR / "vietnam-260413.osm.pbf"
@@ -2113,7 +2119,7 @@ class PSOLogisticsMapModule(BaseModule):
         self._logger.info(f"[{self.MODULE_ID}] on_load")
 
     def build_view(self) -> Any:  # QWidget
-        if self._view is None:
+        if self._view is None or not _qt_is_valid(self._view):
             self._view = _MapView(self)
             # Kick off graph loading automatically on first build
             self._view.start_load_graph()

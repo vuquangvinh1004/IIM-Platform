@@ -51,12 +51,8 @@ class DemandForecastingModule(BaseModule):
             pass
 
     def build_view(self) -> "QWidget":
-        """Tạo và trả về MainView.
-
-        Idempotent: nếu view đã được tạo, trả về view cũ.
-        """
-        if self._view is not None:
-            return self._view
+        """Tạo mới và trả về MainView cho mỗi lần host yêu cầu render."""
+        self._dispose_view()
 
         from .ui.main_view import MainView  # noqa: PLC0415
 
@@ -86,18 +82,30 @@ class DemandForecastingModule(BaseModule):
         if self._logger:
             self._logger.info(f"[{self.module_id}] on_unload() — releasing resources")
 
-        if self._view is not None:
-            # Dừng tất cả QTimer đang chạy trong MethodViews (nếu có)
-            try:
-                if self._view._stationary_tab is not None:
-                    for mv in self._view._stationary_tab._method_views.values():
-                        mv._recalc_timer.stop()
-                if self._view._trend_tab is not None:
-                    for mv in self._view._trend_tab._method_views.values():
-                        mv._recalc_timer.stop()
-            except Exception:  # noqa: BLE001
-                pass
-            self._view = None
+        self._dispose_view()
+
+    def _dispose_view(self) -> None:
+        """Stop timers and safely release current view instance if present."""
+        if self._view is None:
+            return
+
+        # Dừng tất cả QTimer đang chạy trong MethodViews (nếu có).
+        try:
+            if self._view._stationary_tab is not None:
+                for mv in self._view._stationary_tab._method_views.values():
+                    mv._recalc_timer.stop()
+            if self._view._trend_tab is not None:
+                for mv in self._view._trend_tab._method_views.values():
+                    mv._recalc_timer.stop()
+        except Exception:  # noqa: BLE001
+            pass
+
+        try:
+            self._view.setParent(None)  # type: ignore[call-arg]
+            self._view.deleteLater()  # type: ignore[call-arg]
+        except Exception:  # noqa: BLE001
+            pass
+        self._view = None
 
     # ------------------------------------------------------------------
     # State persistence

@@ -73,6 +73,12 @@ from modules.logistics.pso_logistics.problems.tsp_problem import TSPProblem
 from modules.logistics.pso_logistics.problems.vrp_problem import VRPProblem
 from modules.logistics.pso_logistics.problems.vrptw_problem import VRPTWProblem
 
+try:
+    from shiboken6 import isValid as _qt_is_valid
+except ImportError:  # pragma: no cover
+    def _qt_is_valid(_obj: object) -> bool:
+        return True
+
 _WidgetBase = QWidget if _QT else object  # type: ignore[misc,assignment]
 
 # ── UI constants ──────────────────────────────────────────────────────────────
@@ -1475,7 +1481,7 @@ class PSOLogisticsModule(BaseModule):
         self._logger.info(f"[{self.MODULE_ID}] on_load")
 
     def build_view(self) -> Any:  # QWidget
-        if self._view is None:
+        if self._view is None or not _qt_is_valid(self._view):
             self._view = _LogisticsView(self)
         return self._view
 

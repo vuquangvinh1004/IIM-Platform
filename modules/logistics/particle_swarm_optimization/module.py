@@ -63,6 +63,12 @@ from modules.logistics.particle_swarm_optimization.models.state import (
     default_state,
 )
 
+try:
+    from shiboken6 import isValid as _qt_is_valid
+except ImportError:  # pragma: no cover
+    def _qt_is_valid(_obj: object) -> bool:
+        return True
+
 _WidgetBase = QWidget if _QT else object  # type: ignore[misc,assignment]
 
 # ── UI tuning constants ───────────────────────────────────────────────────────
@@ -1009,7 +1015,7 @@ class ParticleSwarmOptimizationModule(BaseModule):
         self._logger.info(f"[{self.MODULE_ID}] on_load")
 
     def build_view(self) -> Any:  # QWidget
-        if self._view is None:
+        if self._view is None or not _qt_is_valid(self._view):
             self._view = _PSOView(self)
         return self._view
 
