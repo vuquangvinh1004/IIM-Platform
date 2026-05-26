@@ -1,0 +1,47 @@
+{
+  "id": "multiple_linear_regression_3d",
+  "name": "Hồi quy Tuyến tính Bội (2 biến X) — 3D",
+  "version": "1.0.0",
+  "sdk_version": "1.0.0",
+  "min_platform_version": "1.0.0",
+  "entry_point": "modules.statistics.multiple_linear_regression_3d.entry:MultipleLinearRegression3DModule",
+  "description": "Mô phỏng hồi quy tuyến tính bội với 2 biến độc lập X₁, X₂. Nhập dữ liệu quan sát (X₁, X₂, Y), hiển thị điểm phân tán 3D, dựng mặt phẳng xu hướng, tính sai số eᵢ và tổng bình phương sai số Σeᵢ², giải hệ số OLS b₀, b₁, b₂ và dự báo tương tác.",
+  "category": "statistics",
+  "author": "IIMP Team",
+  "permissions": [
+    "storage.read",
+    "storage.write",
+    "export.file",
+    "settings.read",
+    "settings.write",
+    "dialogs.basic"
+  ],
+  "tags": [
+    "statistics",
+    "multiple linear regression",
+    "OLS",
+    "3d plot",
+    "regression plane",
+    "residuals",
+    "SSE",
+    "regression analysis"
+  ],
+  "supports_state_restore": true,
+  "supports_export": true,
+  "data_contract_version": "1.0.0",
+  "default_settings": {
+    "precision": 4,
+    "theme_variant": "default"
+  },
+  "capabilities": [
+    "plot.3d",
+    "compute.statistics",
+    "export.image",
+    "interactive.rotate"
+  ],
+  "ui": {
+    "min_width": 980,
+    "min_height": 720,
+    "layout_mode": "split"
+  }
+}
